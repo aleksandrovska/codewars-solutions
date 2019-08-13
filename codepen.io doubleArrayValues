@@ -1,0 +1,33 @@
+
+/* 
+ * Implement function doubleArrayValues which takes an array
+ * of integers and returns an array with each value multiplied by 2.
+ */
+// Only change code below this line
+function doubleArrayValues(arr) {
+var newArr = arr.map(arr => arr*2)
+return newArr  
+  
+}
+// Only change code above this line
+
+// Tests
+test(doubleArrayValues([]), [], 'should return same array for empty array');
+test(doubleArrayValues([0]), [0], 'should return [0] for [0]');
+test(doubleArrayValues([1]), [2], 'should return [2] for [1]');
+test(doubleArrayValues([0, 1, 2, 3, 4 ,5]), [0, 2, 4, 6, 8, 10], 'should return [0, 2, 4, 6, 8, 10] for [0, 1, 2, 3, 4 ,5]');
+
+function test(actual, expected, testName = '') {
+  if (actual.length != expected.length) {
+    console.error('Result array length is not equal to expected length: ' + expected.length);
+    return;
+  }
+  for (let i = 0; i < expected.length; i++) {
+    if (actual[i] !== expected[i]) {
+      const errorMessage = `Test ${testName} failed: for index ${i}, ${actual[i]} is not equal to expected ${expected[i]}`;
+      console.error(errorMessage);
+      return;
+    }  
+  }
+  console.log(`Test ${testName} passed!`);
+}
